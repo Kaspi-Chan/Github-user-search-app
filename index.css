@@ -78,8 +78,6 @@ button{
   border: none;
   background-color: inherit;
   padding: 0;
-  display: grid;
-  place-content: center;
 }
 
 body{
@@ -87,6 +85,7 @@ body{
   font-size: 13px;
   line-height: 1.65;
   background-color: var(--background);
+  color: var(--text-primary);
   min-height: 100vh;
 }
 
@@ -139,6 +138,10 @@ h4{
   white-space: nowrap;
 }
 
+.hidden{
+  display: none;
+}
+
 
 /* ------------------ */
 /* Styles             */
@@ -171,7 +174,7 @@ h4{
   margin-bottom: 2.4rem;
 }
 
-.theme-icon-container{
+.theme-icon-btn{
   display: flex;
   align-items: center;
   gap: 1em;
@@ -184,16 +187,18 @@ h4{
 
 .theme-icon{
   cursor: pointer;
+  display: grid;
+  place-content: center;
 } 
 
-.theme-icon-container:hover *,
-.theme-icon-container:focus *{
+.theme-icon-btn:hover *,
+.theme-icon-btn:focus *{
   color: #000;
   fill: #000;
 }
 
-.darkMode .theme-icon-container:hover *,
-.darkMode .theme-icon-container:focus *{
+.darkMode .theme-icon-btn:hover *,
+.darkMode .theme-icon-btn:focus *{
   color: #90A4D4;
   fill: #90A4D4;
 }
