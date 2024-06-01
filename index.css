@@ -191,14 +191,12 @@ h4{
   place-content: center;
 } 
 
-.theme-icon-btn:hover *,
-.theme-icon-btn:focus *{
+.theme-icon-btn:hover *{
   color: #000;
   fill: #000;
 }
 
-.darkMode .theme-icon-btn:hover *,
-.darkMode .theme-icon-btn:focus *{
+.darkMode .theme-icon-btn:hover *{
   color: #90A4D4;
   fill: #90A4D4;
 }
@@ -212,6 +210,7 @@ h4{
   gap: 0.5rem;
   border-radius: 15px;
   box-shadow: 0 2px 3px rgba(0,0,0, 0.1);
+  margin-bottom: 1rem;
 }
 
 .username-form .magnifier-icon{
@@ -247,6 +246,7 @@ h4{
 @media (min-width: 768px){
   .username-form > div{
     padding: 0.75em 0.8em;
+    margin-bottom: 1.5rem;
   }
 
   .username-form .search-btn{
@@ -254,3 +254,65 @@ h4{
   }
 }
 
+/* ------------------ */
+/* User section       */
+/* ------------------ */
+
+.user-info{
+  background-color: var(--foreground);
+  border-radius: 15px;
+  box-shadow: 0 2px 3px rgba(0,0,0, 0.1);
+  padding: 2rem 1.5rem;
+  display: grid;
+  align-items: stretch;
+  justify-content: stretch;
+  grid-template-areas: 
+    "avatar acc-info"
+    "bio bio"
+    "account-data account-data"
+    "socials socials";
+  grid-template-columns: 70px 1fr;
+  column-gap: 1.25rem;
+}
+.user-info > *{
+  outline: 1px solid orange;
+}
+.avatar{
+  grid-area: avatar;
+}
+.avatar > img{
+  border-radius: 50%;
+}
+.user-account-info{
+  grid-area: acc-info;
+}
+.user-bio{
+  grid-area: bio;
+}
+.user-data{
+  grid-area: account-data;
+}
+.user-socials{
+  grid-area: socials;
+}
+
+
+@media (min-width: 768px) {
+  .user-info{
+    padding: 2.5rem;
+    column-gap: 2.25rem;
+    grid-template-columns: 117px 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  .user-info{
+    padding: 3rem;
+    grid-template-areas: 
+    "avatar acc-info"
+    "avatar bio"
+    ". account-data"
+    ". socials";
+    
+  }
+}
