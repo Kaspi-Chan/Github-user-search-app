@@ -30,7 +30,7 @@
   box-sizing: border-box;
 }
 
-/* Reset margins */
+/* Reset margins and paddings */
 body,
 h1,
 h2,
@@ -39,9 +39,11 @@ h4,
 h5,
 h6,
 p,
+ul,
 picture,
 figure {
   margin: 0;
+  padding: 0;
 }
 
 /* Reset anchor decorations */
@@ -80,6 +82,10 @@ button{
   padding: 0;
 }
 
+ul{
+  list-style: none;
+}
+
 body{
   font-family: "Space Mono", monospace;
   font-size: 13px;
@@ -100,26 +106,24 @@ body{
 /* ------------------ */
 
 h1{
-  font-size: 1.75rem;
   line-height: 1.5;
   color: var(--text-heading);
   font-weight: 700;
 }
 
 h2{
-  font-size: 1.45rem;
   line-height: 1.5;
   color: var(--text-heading);
   font-weight: 700;
 }
 
 h3{
-  font-size: 16px;
+  font-size: 1em;
   line-height: 1.5;
 }
 
 h4{
-  font-size: 0.85rem;
+  font-size: 0.875em;
   line-height: 1.55;
 }
 
@@ -172,6 +176,10 @@ h4{
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2.4rem;
+}
+
+.header > h2{
+  font-size: 1.6rem;
 }
 
 .theme-icon-btn{
@@ -258,6 +266,7 @@ h4{
 /* User section       */
 /* ------------------ */
 
+/* Layout */
 .user-info{
   background-color: var(--foreground);
   border-radius: 15px;
@@ -273,15 +282,10 @@ h4{
     "socials socials";
   grid-template-columns: 70px 1fr;
   column-gap: 1.25rem;
-}
-.user-info > *{
-  outline: 1px solid orange;
+  row-gap: 1.5rem;
 }
 .avatar{
   grid-area: avatar;
-}
-.avatar > img{
-  border-radius: 50%;
 }
 .user-account-info{
   grid-area: acc-info;
@@ -295,7 +299,6 @@ h4{
 .user-socials{
   grid-area: socials;
 }
-
 
 @media (min-width: 768px) {
   .user-info{
@@ -313,6 +316,95 @@ h4{
     "avatar bio"
     ". account-data"
     ". socials";
-    
+  }
+}
+
+/* Content styling */
+.avatar > img{
+  border-radius: 50%;
+}
+
+.user-name{
+  font-size: 1rem;
+}
+.user-joined-date{
+  color: var(--text-accent);
+}
+.user-username{
+  color: var(--primary-clr);
+  margin-bottom: 0.3em;
+}
+
+.user-data{
+  background-color: var(--background);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1em 2em;
+  gap: 0.5em;
+  border-radius: 10px;
+}
+.user-data > div{
+  flex: 1;
+  text-align: center;
+}
+.user-data--number{
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.user-socials{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1.2em;
+}
+.user-socials > li{
+  flex: 1;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 1em;
+}
+.user-socials > li > svg{
+  margin: 0 auto;
+}
+
+@media (min-width: 768px){
+  .user-name{
+    font-size: 1.6rem;
+  }
+  .user-data > div{
+    text-align: left;
+  }
+  .user-data--number{
+    font-size: 1.45em;
+  }
+
+  .user-socials{
+    flex-direction: row;
+  }
+  .user-socials > li{
+    flex-basis: 45%;
+  }
+}
+
+@media (min-width: 1280px){
+  .user-account-info{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .user-name{
+    order: 1;
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+  .user-joined-date{
+    order: 2;
+    width: fit-content;
+  }
+  .user-username{
+    order: 3;
+    flex: 1 1 100%;
   }
 }
