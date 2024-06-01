@@ -230,6 +230,7 @@ h4{
   border: none;
   padding-block: 0.8em;
   background-color: inherit;
+  color: var(--text-heading);
 }
 
 .username-form .username-input:focus{
@@ -320,10 +321,12 @@ h4{
 }
 
 /* Content styling */
+/* AVATAR */
 .avatar > img{
   border-radius: 50%;
 }
 
+/* ACCOUNT INFO */
 .user-name{
   font-size: 1rem;
 }
@@ -335,6 +338,7 @@ h4{
   margin-bottom: 0.3em;
 }
 
+/* ACCOUNT METRICS */
 .user-data{
   background-color: var(--background);
   display: flex;
@@ -353,6 +357,7 @@ h4{
   font-weight: bold;
 }
 
+/* SOCIALS */
 .user-socials{
   display: flex;
   flex-direction: column;
@@ -363,10 +368,23 @@ h4{
   flex: 1;
   display: grid;
   grid-template-columns: 20px 1fr;
+  align-items: center;
   gap: 1em;
+}
+.user-socials > li > *{
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
 }
 .user-socials > li > svg{
   margin: 0 auto;
+}
+.user-socials > li:hover:not(.not-available) > a,
+.user-socials > li:focus:not(.not-available) > a{
+  text-decoration: underline;
+}
+.user-socials > li.not-available{
+  opacity: .5;
 }
 
 @media (min-width: 768px){
