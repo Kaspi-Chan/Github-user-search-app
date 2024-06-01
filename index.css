@@ -1,0 +1,54 @@
+/* ------------------ */
+/* Reset */
+/* ------------------ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+picture,
+figure {
+  margin: 0;
+}
+
+/* Reset anchor decorations */
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+/* Make img easier to work with */
+img,
+picture {
+  max-width: 100%;
+}
+
+/* Make form elements easier to work with */
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
