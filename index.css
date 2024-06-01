@@ -1,5 +1,26 @@
 /* ------------------ */
-/* Reset */
+/* Custom Properties  */
+/* ------------------ */
+
+:root{
+  --background: #F6F8FF;
+  --foreground: #FEFEFE;
+  --primary-clr: #0079FF;
+  --text-primary: #4B6A9B;
+  --text-accent: #697C9A;
+  --text-heading: #2B3442;
+}
+
+.darkMode{
+  --background: #141D2F;
+  --foreground: #1E2A47;
+  --text-primary: #FFF;
+  --text-accent: #FFF;
+  --text-heading: #FFF;
+}
+
+/* ------------------ */
+/* Reset              */
 /* ------------------ */
 
 /* Box sizing */
@@ -51,4 +72,107 @@ h5,
 h6,
 p {
   font-weight: 400;
+}
+
+button{
+  border: none;
+  background-color: inherit;
+  padding: 0;
+}
+
+body{
+  font-family: "Space Mono", monospace;
+  font-size: 15px;
+  line-height: 1.65;
+  background-color: var(--background);
+  min-height: 100vh;
+}
+
+/* ------------------ */
+/* Typography         */
+/* ------------------ */
+
+h1{
+  font-size: 1.75em;
+  line-height: 1.5;
+  color: var(--text-heading);
+  font-weight: 700;
+}
+
+h2{
+  font-size: 1.45em;
+  line-height: 1.5;
+  color: var(--text-heading);
+  font-weight: 700;
+}
+
+h3{
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h4{
+  font-size: 0.85em;
+  line-height: 1.55;
+}
+
+/* ------------------ */
+/* Utility            */
+/* ------------------ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+
+/* ------------------ */
+/* Styles             */
+/* ------------------ */
+
+.main-container{
+  max-width: 21.5em;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+
+@media (min-width: 768px) {
+  .main-container{
+    max-width: 38em;
+    margin-top: 9.5em;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main-container{
+    max-width: 48.5em;
+    margin-top: 10em;
+  }
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.4em;
+}
+
+.theme-icon-container{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  color: var(--text-primary);
+}
+.theme-icon{
+  display: grid;
+  place-content: center;
 }

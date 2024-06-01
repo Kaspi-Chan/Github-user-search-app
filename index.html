@@ -3,26 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | GitHub user search app</title>
 </head>
 <body>
-
-  devfinder
-
-  Light
-  Dark
-
-  Search GitHub username...
-  Search
-
-  Joined
-
-  Repos
-  Followers
-  Following
-
+  <main class="main-container">
+      <header class="header">
+        <h1>devfinder</h1>
+        <div class="theme-icon-container">
+          <span>Dark</span>
+          <button class="theme-icon">
+            <img src="./assets/icon-moon.svg" alt="Moon-icon">
+          </button>
+        </div>
+      </header>
+      <form id="form-username">
+        <div>
+          <button type="submit">
+            <img src="./assets/icon-search.svg" alt="Search magnifier icon">
+          </button>
+          <input type="text" required placeholder="Enter Github username" id="input-username">
+          <button type="submit">Search</button>
+        </div>
+      </form>
+  </main>
 </body>
 </html>
