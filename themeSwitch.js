@@ -3,6 +3,8 @@ const themeButton = document.querySelector('.theme-icon-btn')
 const moonIcon = themeButton.querySelector('.theme-icon .moon-svg')
 const sunIcon = themeButton.querySelector('.theme-icon .sun-svg')
 const themeButtonText = themeButton.querySelector('span');
+const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
+console.log(prefersDarkTheme);
 
 const enableDarkMode = () => {
   document.body.classList.add('darkMode')
@@ -20,7 +22,7 @@ const disableDarkMode = () => {
   themeButtonText.textContent = 'Dark';
 }
 
-if(darkMode === 'enabled'){
+if(darkMode === 'enabled' && prefersDarkTheme.matches){
   enableDarkMode()
 
 }else{
