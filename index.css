@@ -146,6 +146,12 @@ h4{
   display: none;
 }
 
+.elements-container{
+  background-color: var(--foreground);
+  border-radius: 15px;
+  box-shadow: 0 2px 3px rgba(0,0,0, 0.1);
+}
+
 
 /* ------------------ */
 /* Styles             */
@@ -210,20 +216,21 @@ h4{
 }
 
 .username-form > div{
-  background-color: var(--foreground);
   padding: 0.6em 0.65em;
   display: grid;
-  grid-template-columns: 0.1fr 1fr auto;
+  grid-template-columns: 0.2fr 1fr auto;
   align-items: center;
   gap: 0.5rem;
-  border-radius: 15px;
-  box-shadow: 0 2px 3px rgba(0,0,0, 0.1);
   margin-bottom: 1rem;
 }
 
 .username-form .magnifier-icon{
   display: grid;
   place-content: center;
+}
+
+.magnifier-icon > img{
+  max-width: 20px;
 }
 
 .username-form .username-input{
@@ -256,10 +263,15 @@ h4{
   .username-form > div{
     padding: 0.75em 0.8em;
     margin-bottom: 1.5rem;
+    grid-template-columns: 0.1fr 1fr auto;
   }
 
   .username-form .search-btn{
     padding-inline: 1.5rem;
+  }
+
+  .magnifier-icon > img{
+    max-width: 25px;
   }
 }
 
@@ -269,9 +281,6 @@ h4{
 
 /* Layout */
 .user-info{
-  background-color: var(--foreground);
-  border-radius: 15px;
-  box-shadow: 0 2px 3px rgba(0,0,0, 0.1);
   padding: 2rem 1.5rem;
   display: grid;
   align-items: stretch;
@@ -336,6 +345,10 @@ h4{
 .user-username{
   color: var(--primary-clr);
   margin-bottom: 0.3em;
+}
+/* ACCOUNT BIO */
+.user-bio.no-bio{
+  opacity: .75;
 }
 
 /* ACCOUNT METRICS */
