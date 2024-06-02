@@ -2,6 +2,7 @@ const URL = `https://api.github.com/users`
 const inputField = document.getElementById('input-username');
 const userForm = document.getElementById('form-username')
 const userSection = document.querySelector('.user-info')
+const errorMessage = document.querySelector('.error-text')
 
 
 const getUserData = async (url) => {
@@ -25,8 +26,10 @@ const updateUserSectionHandler = async (user) => {
 
   if(!userData){
     userForm.classList.add('no-user')
+    errorMessage.removeAttribute('aria-hidden')
     setTimeout(() => {
       userForm.classList.remove('no-user')
+      errorMessage.setAttribute('aria-hidden', true)
     }, 5000)
     return;
   }
