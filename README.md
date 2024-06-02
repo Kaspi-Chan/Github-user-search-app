@@ -1,6 +1,8 @@
 # Frontend Mentor - GitHub user search app solution
 
 This is a solution to the [GitHub user search app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6).
+[Live site](https://kaspi-chan.github.io/Github-user-search-app/)
+
 
 ## Table of contents
 
@@ -9,8 +11,6 @@ This is a solution to the [GitHub user search app challenge on Frontend Mentor](
 - [My process](#process-overview)
 - [Built with](#built-with)
 - [What I learned](#what-i-learned)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
