@@ -1,26 +1,24 @@
 # Frontend Mentor - GitHub user search app solution
 
-This is a solution to the [GitHub user search app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [GitHub user search app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6).
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Overview](#the-challenge)
+- [My process](#process-overview)
+- [Built with](#built-with)
+- [What I learned](#what-i-learned)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
-### The challenge
+This is a Github user search app built entirely for practice and fun. The idea and design are provided by [Frontendmentor](frontendmentor.io).
+The app has light and dark themes and It uses the user's default preferences with the css media query `prefers-color-scheme`.
+Additionally, `localStorage` is used to memorize the last theme set by the user for a more seamless UX experience.
+
+## The challenge
 
 Users should be able to:
 
@@ -29,87 +27,36 @@ Users should be able to:
 - Search for GitHub users by their username
 - See relevant user information based on their search
 - Switch between light and dark themes
-- **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
 
-### Screenshot
+## Process Overview
 
-![](./screenshot.jpg)
+### 1. Analyze the Design and Setup Themes
+The first step was to analyze the design and set up the colors for the different themes (light and dark). I applied a basic CSS reset to ensure consistency across different browsers. Additionally, I set up the typography to match the design requirements.
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+### 2. Setup the HTML Structure
+I structured the HTML by primarily looking at the desktop version of the design. This approach helps ensure that all elements are included from the start, and it is a practice I usually follow. Starting with the desktop layout ensures that I don't miss any elements or sections.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+### 3. Implement Dark and Light Mode Switch
+Next, I implemented the dark and light mode switch. This involved adding a toggle button and writing the corresponding CSS to switch between themes dynamically.
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+### 4. Style the Components
+After setting up the basic structure and theme switch, I proceeded to style the components in order. This step included writing CSS for each component to ensure they look good and are responsive across different devices.
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+### 5. Add JavaScript Logic
+Finally, I added the JavaScript logic for the app. This included fetching data from the GitHub API, handling user input, and updating the UI based on the search results.
 
-### Links
-
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
-
-## My process
-
-### Built with
+## Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Vanilla JS
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+## What I learned
 
-### What I learned
+Improved my skills with relative css units like `em` and `rem`.
+Learned how to use local storage to store last used theme on the user's machine, improving the UI of the application.
+Practiced responsible design.
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
