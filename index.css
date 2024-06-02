@@ -244,7 +244,9 @@ h4{
   background-color: inherit;
   color: var(--text-heading);
 }
-
+.username-form .username-input::placeholder{
+  color: var(--text-primary);
+}
 .username-form .username-input:focus{
   outline: none;
 }
