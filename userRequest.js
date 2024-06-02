@@ -93,7 +93,13 @@ const updateUserSocials = (userData) => {
   const userTwitter = userSection.querySelector('.user-socials-twitter');
   const userCompany = userSection.querySelector('.user-socials-company');
 
-  userData.location ? userLocation.textContent = userData.location : handleSocialsUnavailable(userLocation);
+  if(userData.location){
+    userLocation.textContent = userData.location;
+    userLocation.parentElement.classList.remove('not-available')
+  }else{
+    handleSocialsUnavailable(userLocation);
+  }
+
   userData.blog ? handleSocialsAvailable(userSite, userData.blog) : handleSocialsUnavailable(userSite);
   userData.twitter_username ? handleSocialsAvailable(userTwitter, userData.twitter_username) : handleSocialsUnavailable(userTwitter);
   userData.company ? handleSocialsAvailable(userCompany, userData.company): handleSocialsUnavailable(userCompany);
