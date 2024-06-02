@@ -84,7 +84,7 @@ const updateUserSocials = (userData) => {
   userData.location ? userLocation.textContent = userData.location : handleSocialsUnavailable(userLocation);
   userData.blog ? handleSocialsAvailable(userSite, userData.blog) : handleSocialsUnavailable(userSite);
   userData.twitter_username ? handleSocialsAvailable(userTwitter, userData.twitter_username) : handleSocialsUnavailable(userTwitter);
-  userData.company ? handleSocialsAvailable(userCompany, userData.company, true): handleSocialsUnavailable(userCompany);
+  userData.company ? handleSocialsAvailable(userCompany, userData.company): handleSocialsUnavailable(userCompany);
 }
 
 const extractDateInfo = (dateString) => {
@@ -96,11 +96,22 @@ const extractDateInfo = (dateString) => {
   return `${day} ${month} ${year}`
 }
 
-const handleSocialsAvailable = (socialElement, link, isCompany) => {
-  socialElement.textContent = link;
-  isCompany ? link = `https://github.com/${link.split('@')[1]}` : link;
+const handleSocialsAvailable = (socialElement, data) => {
+  socialElement.textContent = data;
+  let link = data;
+
+  if(socialElement.classList.contains('user-socials-company')){
+    link = `https://github.com/${link.split('@')[1]}`;
+  }
+
+  if(socialElement.classList.contains('user-socials-twitter')){
+    link = `https://twitter.com/${link}`
+  }
+
   socialElement.setAttribute('href', link)
+  socialElement.parentElement.classList.remove('not-available')
 }
+
 const handleSocialsUnavailable = (socialElement) => {
   socialElement.textContent = 'Not available'
   socialElement.removeAttribute('href')
