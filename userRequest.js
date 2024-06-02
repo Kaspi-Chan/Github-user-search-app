@@ -13,14 +13,23 @@ const getUserData = async (url) => {
     const data = await response.json();
     return data
   }catch(err){
-    console.error('Failed to fetch data:', error);
+    console.error('Failed to fetch data:', err);
   }
 }
 
 const updateUserSectionHandler = async (user) => {
   event.preventDefault();
+  userForm.classList.remove('no-user')
   const url = `${URL}/${user}`
   const userData = await getUserData(url);
+
+  if(!userData){
+    userForm.classList.add('no-user')
+    setTimeout(() => {
+      userForm.classList.remove('no-user')
+    }, 5000)
+    return;
+  }
 
   updateUserAvatar(userData);
   updateUserAccInfo(userData)
