@@ -4,9 +4,9 @@ const userForm = document.getElementById('form-username')
 const userSection = document.querySelector('.user-info')
 
 
-const getUserData = async () => {
+const getUserData = async (url) => {
   try{
-    const response = await fetch(`${URL}/${inputField.value}`)
+    const response = await fetch(url)
     if(!response.ok){
       throw new Error(`HTTP error! status: ${response.status}`)
     }
@@ -17,10 +17,10 @@ const getUserData = async () => {
   }
 }
 
-const updateUserSectionHandler = async () => {
+const updateUserSectionHandler = async (user) => {
   event.preventDefault();
-  const userData = await getUserData();
-  console.log(userData)
+  const url = `${URL}/${user}`
+  const userData = await getUserData(url);
 
   updateUserAvatar(userData);
   updateUserAccInfo(userData)
@@ -118,4 +118,5 @@ const handleSocialsUnavailable = (socialElement) => {
   socialElement.parentElement.classList.add('not-available')
 }
 
-userForm.addEventListener('submit', updateUserSectionHandler)
+userForm.addEventListener('submit', () => updateUserSectionHandler(inputField.value))
+addEventListener("DOMContentLoaded", () => updateUserSectionHandler('octocat'))
